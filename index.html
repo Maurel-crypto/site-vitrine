@@ -10,24 +10,26 @@
 
 <body>
     <header>
-        <div class="container">
+        <div class="containe">
             <h1>Boutique Béninoise</h1>
-            <nav>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="accueil.html">Accueil</a></li>
-                    <li><a href="#produits">Produits</a></li>
-                    <li><a href="#apropos">À Propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Accueil</a></li><hr class="ligne">
+                    <li><a href="#produits">Produits</a></li><hr class="ligne">
+                    <li><a href="#apropos">A Propos</a></li><hr class="ligne">
+                    <li><a href="#contact">Contact</a></li><hr class="ligne">
                 </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Menu">&#9776;</button>
         </div>
+        
     </header>
 
     <section id="hero">
-        <div class="container">
+        <div class="containe">
             <h2>Découvrez nos produits</h2>
             <p>Chaussures, pagnes, ustensiles et bien plus encore, commandez directement depuis notre contact <br> WhatsApp.</p>
-            <a href="#produits" class="btn">Voir nos produits</a>
+            <a href="#appareils" class="btn">Voir nos produits</a>
         </div>
     </section>
 
@@ -75,8 +77,8 @@
             </div>
         </div>
     </section>
-    <section class="produits">
-        <a href="https://wa.me/22966702555?text=Bonjour, j'ai besoin d'un article" style="font-size: 20px;padding-top: 20px;padding-bottom: 20px;width: 200px;text-align: center;">Contactez-nous</a>
+    <section class="bouton">
+        <a href="https://wa.me/22966702555?text=Bonjour, j'ai besoin d'un article"><button>Contactez-nous</button></a>
     </section>
     <section id="appareils">
         <div class="container" style="text-align: center;">
@@ -85,14 +87,14 @@
                 <div class="produits haricots">
                     <div class="img"style="background-image: url(moulinex.jpg);"></div>
                     <h3>Moulinex ROCH</h3>
-                    <p>Pour mixer une grande variété de plats. </p>
+                    <p>Pour mixer une grande variété de plats.</p>
                     <p>18 000 FCFA</p>
                     <a href="https://wa.me/22966702555?text=Bonjour, je veux commander ce moulinex">Commander</a>
                 </div>
                 <div class="produits pagnes" >
                     <div class="img" style="background-image: url(micro.jpg);"></div>
                     <h3>Micro onde Binatone</h3>
-                    <p>réchauffer et de décongeler les aliments rapidement.</p>
+                    <p>Réchauffer et décongeler les aliments.</p>
                     <p>70 000 FCFA</p>
                     <a href="https://wa.me/22966702555?text=Bonjour, je veux commander ce micro onde">Commander</a>
                 </div>
@@ -176,7 +178,7 @@
                 <h2>Contact</h2>
                             <p>Pour toute question ou commande spéciale, n'hésitez pas à nous contacter.</p>
 
-                <p>📞 +229 0194493806 / WhatsApp : <a href="https://wa.me/22966702555">+229 0166702555</a></p>
+                <p>📞 +229 0194493806 / WhatsApp : <a href="https://wa.me/22966702555" style="text-decoration: none;">+229 0166702555</a></p>
                 <p>📍 Adresse : Wologuede (von en face eglise protestant), Cotonou</p>
             </section>
             <a href="https://wa.me/22962812291?text=Bonjour%2C%20je%20souhaite%20passer%20une%20commande.%20Pouvez-vous%20m%27aider%20%3F"
@@ -190,7 +192,25 @@
         </div>
     </footer>
 
-    <script src="accueil.js"></script>
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const navList = document.querySelector("nav ul");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+
+        toggleBtn.addEventListener("click", function () {
+            navList.classList.toggle("active");
+        });
+
+        navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navList.classList.remove("active");
+        });
+    });
+     });
+
+    </script>
 </body>
 
 </html>
